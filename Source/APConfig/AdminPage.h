@@ -1,6 +1,10 @@
+// Creates an admin page on a webserver which allows the user to update the SSID and Password
+// Performs basic checks to ensure that the input values are valid
+
 #ifndef AdminPage_h
 #define AdminPage_h
 
+//Holds the admin webpage in the program memory
 const char adminPage[] PROGMEM = 
     "<html>"
       "<head>"

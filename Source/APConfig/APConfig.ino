@@ -1,6 +1,9 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
+#define USESERIAL
+#define USELED
+
 #include "Config.h"
 #include "FirmwareReset.h"
 #include "AdminPage.h"

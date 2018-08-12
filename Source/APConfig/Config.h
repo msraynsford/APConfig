@@ -1,3 +1,6 @@
+// Handles a class of data for storing variables, and the reading/writing of those variables to EEPROM
+// It is able to detect invalid data being read from EEPROM and restore some basic values in those circumstances
+
 #ifndef Config_H
 #define Config_H
 
@@ -9,27 +12,33 @@
 #define SSID_DEFAULT "APConfig"
 #define PASS_DEFAULT "password"
 
+// Define a structure to hold all the variables that are going to be stored in EEPROM
 struct config_t{
   char ssid[MAX_STR_LEN] = SSID_DEFAULT;
   char pass[MAX_STR_LEN] = PASS_DEFAULT;
 } config;
 
+// Declare an area of EEPROM where the variables are stored
 void InitConfig() {
-  // Declare an area of eeprom where the variables are stored
   EEPROM.begin(sizeof(config));
 }
 
 // Writes the config values back to EEPROM
 void SaveConfig() {
+#ifdef USESERIAL
   Serial.printf("Save Config\n");
+#endif
 
   // Store the new settings to EEPROM
   EEPROM_writeAnything(0,  config);    
   EEPROM.commit();
 }
 
+// Restores the values of SSID and Password if the EEPROM has been corrupted
 void ResetConfig() {
+#ifdef USESERIAL
   Serial.printf("Reset Config\n");
+#endif
   
   // If the EEROM isn't valid then create a unique name for the wifi
   sprintf(config.ssid, "%s %06X", SSID_DEFAULT, ESP.getChipId());
@@ -38,6 +47,7 @@ void ResetConfig() {
   SaveConfig();
 }
 
+// Checks all of the bytes in the string array to make sure they are valid characters
 bool ValidateString(char* value) {
   bool valid = true;
   
@@ -82,8 +92,10 @@ void LoadConfig() {
 
 // Sends a copy of the config values out to the serial port
 void PrintConfig() {
+#ifdef USESERIAL
   Serial.printf("SSID: '%s'\n", config.ssid);  
   Serial.printf("Pass: '%s'\n", config.pass);
+#endif
 }
 
 #endif

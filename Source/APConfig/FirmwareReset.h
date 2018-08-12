@@ -6,9 +6,6 @@
 
 #include <Ticker.h>
 
-#define USESERIAL
-#define USELED
-
 #define FLAGSET     0x55555555
 #define FLAGCLEAR   0xAAAAAAAA
 #define FLAGADDRESS 00
