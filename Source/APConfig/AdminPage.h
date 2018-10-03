@@ -35,6 +35,8 @@ void serveAdmin(ESP8266WebServer *webServer) {
   else {      
     // Create a string containing all the arguments, send them out to the serial port
     // Check to see if there are new values (also doubles to check the length of the new value is long enough)
+    Serial.println(webServer->arg("newssid"));
+    
     if((webServer->arg("newssid").length() >= MIN_STR_LEN) &&
        (webServer->arg("newssid").length() < MAX_STR_LEN)) 
       webServer->arg("newssid").toCharArray(config.ssid, sizeof(config.ssid));

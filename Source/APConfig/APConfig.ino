@@ -20,7 +20,6 @@ void setup() {
   WiFi.mode(WIFI_AP);
 
   LoadConfig();
-  ResetConfig();
   PrintConfig();
 
   //Check to see if the flag is still set from the previous boot

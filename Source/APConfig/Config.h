@@ -6,8 +6,8 @@
 
 #include "EEPROMAnything.h"
 
+#define MIN_STR_LEN 8
 #define MAX_STR_LEN 17
-#define MIN_STR_LEN 17
 
 #define SSID_DEFAULT "APConfig"
 #define PASS_DEFAULT "password"
