@@ -13,14 +13,14 @@ Once the connection has been established you can connect to the device through a
 ![alt text](https://github.com/msraynsford/APConfig/blob/master/Browser.png "Browser Image")
 
 
-#Changing the SSID and Password
+# Changing the SSID and Password
 It is recommended to change the password for the WiFi network as soon as possible, there is a separate admin page that allows you to do this. If you navigate the browser to http://192.168.4.1/admin you will be presented with this page
 
 ![alt text](https://github.com/msraynsford/APConfig/blob/master/Admin.png "Admin Image")
 
 This page allows you to change the password without entering the previous password because you already have to be connected to the WiFi using the existing password. 
 
-#Connecting to the device without a password
+# Connecting to the device without a password
 If you forget the password it is still possible to connect to the device and update the SSID and password. When you turn the device on, the led will illuminate after 2 seconds and remain on for 1 second. 
 
 ![alt text](https://github.com/msraynsford/APConfig/blob/master/Device.png "Device Image")
