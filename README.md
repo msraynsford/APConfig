@@ -19,6 +19,7 @@ It is recommended to change the password for the WiFi network as soon as possibl
 ![alt text](https://github.com/msraynsford/APConfig/blob/master/Admin.png "Admin Image")
 
 This page allows you to change the password without entering the previous password because you already have to be connected to the WiFi using the existing password. 
+**If you leave the password blank then the device will be configured with an open network.**
 
 # Connecting to the device without a password
 If you forget the password it is still possible to connect to the device and update the SSID and password. When you turn the device on, the led will illuminate after 2 seconds and remain on for 1 second. 
