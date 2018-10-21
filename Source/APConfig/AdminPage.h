@@ -29,8 +29,8 @@ void serveAdmin(ESP8266WebServer *webServer) {
     
   // Check to see if we've been sent any arguments and instantly return if not
   if(webServer->args() == 0) {
-    webServer->sendHeader("Content-Length", String(strlen(adminPage)));
-    webServer->send(200, "text/html", adminPage);
+    webServer->sendHeader("Content-Length", String(strlen_P(adminPage)));
+    webServer->send(200, "text/html", FPSTR(adminPage));
   }
   else {      
     // Create a string containing all the arguments, send them out to the serial port
